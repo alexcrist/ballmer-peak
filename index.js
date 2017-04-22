@@ -62,6 +62,12 @@ function getBacData(startTime, endTime, weight, genderConstant, drinkSchedule) {
   return bacData;
 }
 
+$(function () {
+  $('#start-time').val(moment().format('HH:mm'));
+  $('#peak-time').val(moment().add(3, 'hours').format('HH:mm'));
+  $('#end-time').val(moment().add(4, 'hours').format('HH:mm'));
+});
+
 $('#submit').click(function (e) {
   e.preventDefault();
   $('.output').css('display', 'block');
@@ -79,7 +85,7 @@ $('#submit').click(function (e) {
 
   var bacChart = createBacChart(bacData);
   var drinksChart = createDrinksChart(drinkSchedule);
-  clock(bacData, drinkSchedule, bacChart, drinksChart, moment());
+  clock(bacData, drinkSchedule, bacChart, drinksChart, moment().subtract(1, 'day'));
 });
 
 function createBacChart(bacData) {
@@ -89,7 +95,7 @@ function createBacChart(bacData) {
       datasets: [
         {
           data: bacData,
-          lineTension: 0.15,
+          lineTension: 0.1,
           backgroundColor: 'rgba(156, 39, 176, 0.2)',
           borderWidth: 5,
           borderColor: 'rgba(90, 22, 102, 0.2)',
@@ -173,15 +179,15 @@ function clock(bacData, drinkSchedule, bacChart, drinksChart, previousTime) {
   var borderColor = [];
   drinkSchedule.forEach(function (item) {
     if (item.time.isBefore(time)) {
-      backgroundColor.push('rgba(0, 132, 99, 0.2)');
-      borderColor.push('rgba(0, 132, 99, 1)');
+      backgroundColor.push('rgba(0, 149, 40, 0.2)');
+      borderColor.push('rgba(0, 149, 40, 1)');
 
       if (previousTime.isBefore(item.time)) {
         $.playSound('huwaa');
       }
     } else {
-      backgroundColor.push('rgba(0, 99, 132, 0.2)');
-      borderColor.push('rgba(0, 99, 132, 1)');
+      backgroundColor.push('rgba(0, 40, 149, 0.2)');
+      borderColor.push('rgba(0, 40, 149, 1)');
     }
   });
   drinksChart.data.datasets[0].backgroundColor = backgroundColor;
