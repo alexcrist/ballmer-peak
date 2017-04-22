@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ballmer Bois</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <h1>Ballmer Bois</h1>
+  <hr>
+
+  <h2>Input</h2>
+  <div class="input">
+    <form>
+      <div class="form-group row">
+        <label for="start-time" class="col-2 col-form-label">Start time</label>
+        <div class="col-10">
+          <input class="form-control" type="time" value="13:00" id="start-time">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="peak-time" class="col-2 col-form-label">Peak time</label>
+        <div class="col-10">
+          <input class="form-control" type="time" value="14:00" id="peak-time">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="end-time" class="col-2 col-form-label">End time</label>
+        <div class="col-10">
+          <input class="form-control" type="time" value="15:00" id="end-time">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="weight" class="col-2 col-form-label">Weight (lbs)</label>
+        <div class="col-10">
+          <input class="form-control" type="number" value="165" id="weight">
+        </div>
+      </div>
+      <div class="form-group row">
+        <button id="submit" class="btn btn-primary">Climb the peak</button>
+      </div>
+    </form>
+  </div>
+
+  <hr>
+  <div class="output">
+    <h2>Output</h2>
+
+    <h3 id="time">Current time: </h3>
+
+    <h4>Blood alcohol content</h4>
+    <canvas id="bac-chart" class="chart" height="200"></canvas>
+
+    <h4>Drink schedule</h4>
+    <canvas id="drink-chart" class="chart" height="200"></canvas>
+  </div>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/moment.min.js"></script>
+  <script src="vendor/Chart.min.js"></script>
+  <script src="vendor/jquery.playSound.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

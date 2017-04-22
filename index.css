@@ -1,0 +1,26 @@
+body {
+  max-width: 750px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+h3,
+h4 {
+  margin-top: 40px;
+}
+
+.input {
+  padding: 24px 32px 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.output {
+  display: none;
+}
+
+.chart {
+  height: 400px;
+}
+
