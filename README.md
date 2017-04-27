@@ -1,5 +1,5 @@
 # ballmer-peak
-http://alexcrist.github.io/ballmer-bois
+http://alexcrist.github.io/ballmer-peak
 
 A website that creates a schedule for those attempting to climb the [ballmer peak](https://imgs.xkcd.com/comics/ballmer_peak.png). Brain child of the ballmer bois. Currently targets a BAC peak of 0.12.
 
