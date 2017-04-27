@@ -183,7 +183,8 @@ function clock(bacData, drinkSchedule, bacChart, drinksChart, previousTime) {
       borderColor.push('rgba(0, 149, 40, 1)');
 
       if (previousTime.isBefore(item.time)) {
-        $.playSound('huwaa');
+        // Disabling sound for now
+        // $.playSound('huwaa');
       }
     } else {
       backgroundColor.push('rgba(0, 40, 149, 0.2)');
