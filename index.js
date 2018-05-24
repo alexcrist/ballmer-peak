@@ -79,9 +79,10 @@ $('#submit').click(function (e) {
   var peakTime = moment($('#peak-time').val(), TIME_FORMAT);
   var endTime = moment($('#end-time').val(), TIME_FORMAT);
   var weight = $('#weight').val();
+  var gender = $('#male').is(':checked') ? MALE_CONST : FEMALE_CONST;
 
-  var drinkSchedule = getDrinkSchedule(startTime, peakTime, weight, MALE_CONST);
-  var bacData = getBacData(startTime, endTime, weight, MALE_CONST, drinkSchedule);
+  var drinkSchedule = getDrinkSchedule(startTime, peakTime, weight, gender);
+  var bacData = getBacData(startTime, endTime, weight, gender, drinkSchedule);
 
   var bacChart = createBacChart(bacData);
   var drinksChart = createDrinksChart(drinkSchedule);
