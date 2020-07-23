@@ -8,7 +8,7 @@ var BALLMER_PEAK_BAC = 0.12;
 
 // Get BAC from weight (lbs), bender, time elapsed (hours) and # standard drinks
 function getBac(weight, genderConstant, time, numDrinks) {
-  return (numDrinks / BOOZE_CONST / weight / genderConstant) - (TIME_CONST * time);
+  return Math.max((numDrinks / BOOZE_CONST / weight / genderConstant) - (TIME_CONST * time), 0);
 }
 
 // Get # of standard drinks from weight (lbs), gender, time elapsed (hours), and BAC
