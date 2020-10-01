@@ -35,7 +35,7 @@
       <div class="form-group row">
         <label for="weight" class="col-2 col-form-label">Weight (lbs)</label>
         <div class="col-10">
-          <input class="form-control" type="number" value="165" id="weight">
+          <input class="form-control" type="number" min="0" value="165" id="weight" oninput="validity.valid||(value='');" >
         </div>
       </div>
       <div class="form-group row">
