@@ -16,6 +16,7 @@ function getNumDrinks(weight, genderConstant, time, bac) {
   return BOOZE_CONST * weight * genderConstant * (bac + TIME_CONST * time);
 }
 
+// Get drink schedule from the desired start time, peak time, weight, and gender
 function getDrinkSchedule(startTime, peakTime, weight, genderConstant) {
   var timeToPeak = moment.duration(peakTime.diff(startTime));
   var numDrinks = getNumDrinks(weight, genderConstant, timeToPeak.asHours(), BALLMER_PEAK_BAC);
@@ -33,6 +34,7 @@ function getDrinkSchedule(startTime, peakTime, weight, genderConstant) {
   return drinkSchedule;
 }
 
+// Determine the amount of drinks to consume each time
 function getNumDrinksAtTime(time, drinkSchedule) {
   var numDrinks = 0;
   drinkSchedule.forEach(function (item) {
@@ -43,6 +45,7 @@ function getNumDrinksAtTime(time, drinkSchedule) {
   return numDrinks;
 }
 
+// Get data about BAC to be used in the chart and clock
 function getBacData(startTime, endTime, weight, genderConstant, drinkSchedule) {
   var bacData = [];
   var totalTime = moment.duration(endTime.diff(startTime)).asMinutes();
